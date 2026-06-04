@@ -1,0 +1,50 @@
+#spring.application.name=ecom-application
+#
+#spring.h2.console.enabled=true
+#spring.datasource.url=jdbc:h2:mem:test
+#spring.datasource.driverClassName=org.h2.Driver
+
+
+
+
+
+
+spring:
+    application:
+        name: ecom-application
+    h2:
+        console:
+            enabled: true
+    datasource:
+        url: jdbc:h2:mem:test
+        driverClassName: org.h2.Driver
+    jpa:
+        hibernate:
+            ddl-auto: create
+        show-sql: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+
+
+    endpoint:
+        health:
+            show-details: always
+        shutdown:
+            enabled: true
+
+
+    info:
+        env:
+            enabled: true
+
+
+info:
+    app:
+        name: E-commerce Application
+        description: A simple e-commerce application built with Spring Boot
+        version: 1.0.0
+
