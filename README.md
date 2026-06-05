@@ -103,3 +103,15 @@ Spring Boot Actuator is enabled with all endpoints exposed.
 - **Stock validation** — Cart additions are validated against current stock quantity.
 - **Header-based identity** — Cart and order operations identify the caller via the `X-User-Id` HTTP header.
 - **DTO separation** — API contracts use dedicated request/response DTOs, keeping entities internal.
+
+## Docker
+./mvnw spring-boot:build-image \
+-Dspring-boot.build-image.imageName=ecom-application:0.0.1-SNAPSHOT
+
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=kadut/ecom-application"
+
+docker run --name ecom-application -d -p 8080:8080 kadut/ecom-application
+
+docker start ecom-application
+
+docker stop ecom-application
